@@ -71,7 +71,7 @@ from vit_pytorch import ViT
 
 
 # start from 
-epocarestart=2
+epochrestart=2
 
 
 # VIT - freeze some layer 
@@ -143,7 +143,7 @@ heads5 = nn.Sequential(
     nn.Linear(1024, 9)
 )
 
-print ("MODIIED MODEL")
+print ("MODIFIED MODEL")
 print(model)
 
 
@@ -190,7 +190,7 @@ train_losses, val_losses, train_acc= [], [], []
 val_acc =[]
 val_losses2= []
 print("start train")
-for epoch in range(epocarestart,num_epochs):
+for epoch in range(epochrestart,num_epochs):
     print("epoch " + str(epoch))
     running_loss = 0.0
     running_corrects=0.0
@@ -327,7 +327,7 @@ for epoch in range(epocarestart,num_epochs):
 print(" EPOCHS number =" + str(num_epochs))
 if (1==1):
     # plot loss
-    stringapergrafici="Grafico-VIT-"
+    imagestring="Image-VIT-"
     plt.figure(figsize=(10, 5))
     print("TRAIN LOSSES",train_losses)
     print(val_losses2)
@@ -337,7 +337,7 @@ if (1==1):
     plt.xlabel("epochs")
     plt.ylabel("Loss")
     plt.legend()
-    nomefileloss = stringapergrafici +"-LOSS.png"
+    nomefileloss = imagestring +"-LOSS.png"
     plt.savefig(nomefileloss)
     #plt.show()
 
@@ -356,8 +356,8 @@ if (1==1):
     plt.xlabel("epochs")
     plt.ylabel("Accuracy")
     plt.legend()
-    nomefileacc=stringapergrafici+"-ACC.png"
+    namefileacc=imagestring+"-ACC.png"
     plt.savefig('acc.png')
-    plt.savefig(nomefileacc)
+    plt.savefig(namefileacc)
     plt.show()
 
